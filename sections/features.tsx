@@ -29,6 +29,7 @@ const features = [
 ];
 const FeatureCard = ({ feature }: any) => {
   return (
+    
     <div className="group w-[260px] h-[160px] mx-3">
       <div
         className="
@@ -64,7 +65,7 @@ const FeatureCard = ({ feature }: any) => {
 
 const Features = () => {
   return (
-    <section className="relative py-28 px-6 md:px-12 overflow-hidden">
+    <section className="relative py-28 px-6 md:px-12 overflow-hidden" id="features">
       {/* Background Glow */}
       <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-pink-500/20 blur-[120px] rounded-full -z-10" />
 

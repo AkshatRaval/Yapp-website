@@ -1,41 +1,164 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useSensoryUI } from "@/components/ui/sensory-ui/config/provider";
+import { FaGithub, FaRedditAlien } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { playSound } = useSensoryUI();
+
+  const handleNavClick = () => {
+    void playSound("navigation.tab");
+    setIsOpen(false);
+  };
+
+  const handleMenuToggle = () => {
+    void playSound(isOpen ? "overlay.close" : "overlay.open");
+    setIsOpen(!isOpen);
+  };
+
+  const handleLoginHover = () => void playSound("interaction.subtle");
+  const handleGetStarted = () => void playSound("notification.info");
+
   return (
     <div className="fixed top-0 w-full z-50">
-      
       <header className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
-        
-        {/* Left - Nav Pills */}
-        <ul className="flex items-center gap-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-2 text-sm md:text-base text-white">
+        {/* Desktop Nav Pills */}
+        <ul className="hidden md:flex items-center gap-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-2 text-sm md:text-base text-white">
           <li>
-            <a href="#" className="hover:text-pink-400 transition">Home</a>
+            <a
+              href="#"
+              onClick={handleNavClick}
+              className="hover:text-pink-400 transition"
+            >
+              Home
+            </a>
           </li>
           <li>
-            <a href="#features" className="hover:text-pink-400 transition">Features</a>
+            <a
+              href="#features"
+              onClick={handleNavClick}
+              className="hover:text-pink-400 transition"
+            >
+              Features
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-pink-400 transition">
+            <a
+              href="#"
+              onClick={handleNavClick}
+              className="hover:text-pink-400 transition"
+            >
               About <span className="italic">Yapp</span>
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-pink-400 transition">FAQ</a>
+            <a
+              href="#contact"
+              onClick={handleNavClick}
+              className="hover:text-pink-400 transition"
+            >
+              Contact
+            </a>
           </li>
         </ul>
 
-        {/* Right - Actions */}
-        <div className="flex items-center gap-6 text-white">
-          <a href="#" className="text-sm md:text-base hover:text-pink-400 transition">
-            Login
-          </a>
+        {/* Mobile Hamburger */}
+        <button
+          className="md:hidden text-white p-2 bg-white/10 rounded-full border border-white/20"
+          onClick={handleMenuToggle}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
-          <button className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition">
-            Get Started
+        {/* Right Actions */}
+        <div className="flex items-center gap-4 text-white">
+          {/* <a
+            href="#"
+            className="hidden sm:block text-sm md:text-base hover:text-pink-400 transition"
+            onMouseEnter={handleLoginHover}
+          >
+            Login
+          </a> */}
+
+          <div className="flex gap-2">
+            <button
+              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+              onClick={handleGetStarted}
+            >
+              <a href="#contact">
+                <FaGithub size={20}/>
+              </a>
+            </button>
+            <button
+              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+              onClick={handleGetStarted}
+            >
+              <a href="#contact">
+                <BsTwitterX size={20}/>
+              </a>
+            </button>
+            <button
+              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+              onClick={handleGetStarted}
+            >
+              <a href="#contact">
+                <FaRedditAlien size={20}/>
+              </a>
+            </button>
+          </div>
+          <button
+            className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+            onClick={handleGetStarted}
+          >
+            <a href="#contact">Get Started</a>
           </button>
         </div>
-
       </header>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden absolute top-20 left-6 right-6 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 text-white animate-in slide-in-from-top-5 duration-300">
+          <a
+            href="#"
+            className="hover:text-pink-400 py-2 border-b border-white/5"
+            onClick={handleNavClick}
+          >
+            Home
+          </a>
+          <a
+            href="#features"
+            className="hover:text-pink-400 py-2 border-b border-white/5"
+            onClick={handleNavClick}
+          >
+            Features
+          </a>
+          <a
+            href="#"
+            className="hover:text-pink-400 py-2 border-b border-white/5"
+            onClick={handleNavClick}
+          >
+            About Yapp
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-pink-400 py-2"
+            onClick={handleNavClick}
+          >
+            Contact
+          </a>
+          {/* <a
+            href="#"
+            className="sm:hidden text-pink-400 font-medium pt-2"
+            onClick={handleNavClick}
+          >
+            Login
+          </a> */}
+        </div>
+      )}
     </div>
   );
 };
