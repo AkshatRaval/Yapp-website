@@ -20,7 +20,6 @@ const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLoginHover = () => void playSound("interaction.subtle");
   const handleGetStarted = () => void playSound("notification.info");
 
   return (
@@ -64,6 +63,15 @@ const Navigation = () => {
               Waitlist
             </a>
           </li>
+          <li>
+            <a
+              href="#contact"
+              onClick={handleNavClick}
+              className="hover:text-pink-400 transition"
+            >
+              Contact
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Hamburger */}
@@ -87,31 +95,31 @@ const Navigation = () => {
           <div className="flex gap-2">
             {/* PUT YOUR SOCIAL LINKS HERE */}
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/justabeingg/yapp"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
               onClick={handleGetStarted}
             >
-              <FaGithub size={20}/>
+              <FaGithub size={20} />
             </a>
             <a
-              href="https://x.com/your-username"
+              href="https://x.com/akshatraval8"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
               onClick={handleGetStarted}
             >
-              <BsTwitterX size={20}/>
+              <BsTwitterX size={20} />
             </a>
             <a
-              href="https://reddit.com/r/your-community"
+              href="https://reddit.com/r/YappYourself"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
               onClick={handleGetStarted}
             >
-              <FaRedditAlien size={20}/>
+              <FaRedditAlien size={20} />
             </a>
           </div>
           <a
@@ -126,9 +134,15 @@ const Navigation = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-6 right-6 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 text-white animate-in slide-in-from-top-5 duration-300">
+        <>
+          {/* Invisible overlay to catch outside clicks */}
+          <div 
+            className="md:hidden fixed inset-0 -z-10 h-screen w-screen" 
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="md:hidden absolute top-20 left-6 right-6 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 text-white animate-in slide-in-from-top-5 duration-300">
           <a
-            href="#hero"
+            href="#"
             className="hover:text-pink-400 py-2 border-b border-white/5"
             onClick={handleNavClick}
           >
@@ -155,6 +169,13 @@ const Navigation = () => {
           >
             Waitlist
           </a>
+          <a
+            href="#contact"
+            className="hover:text-pink-400 py-2"
+            onClick={handleNavClick}
+          >
+            Contact
+          </a>
           {/* <a
             href="#"
             className="sm:hidden text-pink-400 font-medium pt-2"
@@ -162,7 +183,8 @@ const Navigation = () => {
           >
             Login
           </a> */}
-        </div>
+          </div>
+        </>
       )}
     </div>
   );

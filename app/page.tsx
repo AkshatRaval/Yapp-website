@@ -20,7 +20,7 @@ const page = () => {
       <About />
       <Features />
       <HowItWorks />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <CTA />
       <Contact />
       <Footer />

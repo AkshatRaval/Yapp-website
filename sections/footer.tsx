@@ -1,13 +1,13 @@
 import { Mail } from "lucide-react";
 import React from "react";
-import {  BsTwitterX } from "react-icons/bs";
-import { FaReddit, FaInstagram  } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { FaReddit, FaInstagram } from "react-icons/fa";
 
 
 const Footer = () => {
   return (
     <footer className="w-full py-16 px-6">
-      
+
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Card */}
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-8 md:p-16">
@@ -27,7 +27,7 @@ const Footer = () => {
               <div className="flex gap-4">
                 {/* PUT YOUR SOCIAL LINKS HERE */}
                 <a
-                  href="https://x.com/your-username"
+                  href="https://x.com/akshatraval8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
@@ -35,23 +35,16 @@ const Footer = () => {
                   <BsTwitterX size={20} />
                 </a>
                 <a
-                  href="https://reddit.com/r/your-community"
+                  href="https://reddit.com/r/YappYourself"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
                 >
                   <FaReddit size={20} />
                 </a>
+
                 <a
-                  href="https://instagram.com/your-username"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
-                >
-                  <FaInstagram size={20} />
-                </a>
-                <a
-                  href="mailto:hello@yourdomain.com"
+                  href="mailto:getstartedwithdev@gmail.com"
                   className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
                 >
                   <Mail size={20} />
