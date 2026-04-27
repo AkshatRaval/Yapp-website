@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useSensoryUI } from "@/components/ui/sensory-ui/config/provider";
-import { FaGithub, FaRedditAlien } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import { FaRedditAlien } from "react-icons/fa";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -93,16 +93,6 @@ const Navigation = () => {
           </a> */}
 
           <div className="flex gap-2">
-            {/* PUT YOUR SOCIAL LINKS HERE */}
-            <a
-              href="https://github.com/justabeingg/yapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
-              onClick={handleGetStarted}
-            >
-              <FaGithub size={20} />
-            </a>
             <a
               href="https://x.com/akshatraval8"
               target="_blank"
@@ -136,47 +126,47 @@ const Navigation = () => {
       {isOpen && (
         <>
           {/* Invisible overlay to catch outside clicks */}
-          <div 
-            className="md:hidden fixed inset-0 -z-10 h-screen w-screen" 
+          <div
+            className="md:hidden fixed inset-0 -z-10 h-screen w-screen"
             onClick={() => setIsOpen(false)}
           />
           <div className="md:hidden absolute top-20 left-6 right-6 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 text-white animate-in slide-in-from-top-5 duration-300">
-          <a
-            href="#"
-            className="hover:text-pink-400 py-2 border-b border-white/5"
-            onClick={handleNavClick}
-          >
-            Home
-          </a>
-          <a
-            href="#features"
-            className="hover:text-pink-400 py-2 border-b border-white/5"
-            onClick={handleNavClick}
-          >
-            Features
-          </a>
-          <a
-            href="#about"
-            className="hover:text-pink-400 py-2 border-b border-white/5"
-            onClick={handleNavClick}
-          >
-            About Yapp
-          </a>
-          <a
-            href="#join"
-            className="hover:text-pink-400 py-2"
-            onClick={handleNavClick}
-          >
-            Waitlist
-          </a>
-          <a
-            href="#contact"
-            className="hover:text-pink-400 py-2"
-            onClick={handleNavClick}
-          >
-            Contact
-          </a>
-          {/* <a
+            <a
+              href="#"
+              className="hover:text-pink-400 py-2 border-b border-white/5"
+              onClick={handleNavClick}
+            >
+              Home
+            </a>
+            <a
+              href="#features"
+              className="hover:text-pink-400 py-2 border-b border-white/5"
+              onClick={handleNavClick}
+            >
+              Features
+            </a>
+            <a
+              href="#about"
+              className="hover:text-pink-400 py-2 border-b border-white/5"
+              onClick={handleNavClick}
+            >
+              About Yapp
+            </a>
+            <a
+              href="#join"
+              className="hover:text-pink-400 py-2"
+              onClick={handleNavClick}
+            >
+              Waitlist
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-pink-400 py-2"
+              onClick={handleNavClick}
+            >
+              Contact
+            </a>
+            {/* <a
             href="#"
             className="sm:hidden text-pink-400 font-medium pt-2"
             onClick={handleNavClick}
