@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SensoryUIProvider } from "@/components/ui/sensory-ui/config/provider";
+import { sora, inter } from "./fonts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${sora.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-      
         <SensoryUIProvider>{children}</SensoryUIProvider>
       </body>
     </html>

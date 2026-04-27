@@ -29,7 +29,7 @@ const features = [
 ];
 const FeatureCard = ({ feature }: any) => {
   return (
-    
+
     <div className="group w-[260px] h-[160px] mx-3">
       <div
         className="
@@ -137,7 +137,7 @@ const Features = () => {
               lg:max-w-[460px]
             "
           >
-            <Iphone src="/assets/doodleBg.mp4" />
+            <Iphone src="/assets/mainScreenshot.jpeg" />
           </div>
         </div>
       </div>

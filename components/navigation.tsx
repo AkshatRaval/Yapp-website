@@ -30,7 +30,7 @@ const Navigation = () => {
         <ul className="hidden md:flex items-center gap-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-2 text-sm md:text-base text-white">
           <li>
             <a
-              href="#"
+              href="#hero"
               onClick={handleNavClick}
               className="hover:text-pink-400 transition"
             >
@@ -48,7 +48,7 @@ const Navigation = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="#about"
               onClick={handleNavClick}
               className="hover:text-pink-400 transition"
             >
@@ -57,11 +57,11 @@ const Navigation = () => {
           </li>
           <li>
             <a
-              href="#contact"
+              href="#join"
               onClick={handleNavClick}
               className="hover:text-pink-400 transition"
             >
-              Contact
+              Waitlist
             </a>
           </li>
         </ul>
@@ -85,37 +85,42 @@ const Navigation = () => {
           </a> */}
 
           <div className="flex gap-2">
-            <button
-              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+            {/* PUT YOUR SOCIAL LINKS HERE */}
+            <a
+              href="https://github.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
               onClick={handleGetStarted}
             >
-              <a href="#contact">
-                <FaGithub size={20}/>
-              </a>
-            </button>
-            <button
-              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+              <FaGithub size={20}/>
+            </a>
+            <a
+              href="https://x.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
               onClick={handleGetStarted}
             >
-              <a href="#contact">
-                <BsTwitterX size={20}/>
-              </a>
-            </button>
-            <button
-              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
+              <BsTwitterX size={20}/>
+            </a>
+            <a
+              href="https://reddit.com/r/your-community"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
               onClick={handleGetStarted}
             >
-              <a href="#contact">
-                <FaRedditAlien size={20}/>
-              </a>
-            </button>
+              <FaRedditAlien size={20}/>
+            </a>
           </div>
-          <button
+          <a
+            href="#join"
             className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
             onClick={handleGetStarted}
           >
-            <a href="#contact">Get Started</a>
-          </button>
+            Get Started
+          </a>
         </div>
       </header>
 
@@ -123,7 +128,7 @@ const Navigation = () => {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-6 right-6 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 text-white animate-in slide-in-from-top-5 duration-300">
           <a
-            href="#"
+            href="#hero"
             className="hover:text-pink-400 py-2 border-b border-white/5"
             onClick={handleNavClick}
           >
@@ -137,18 +142,18 @@ const Navigation = () => {
             Features
           </a>
           <a
-            href="#"
+            href="#about"
             className="hover:text-pink-400 py-2 border-b border-white/5"
             onClick={handleNavClick}
           >
             About Yapp
           </a>
           <a
-            href="#contact"
+            href="#join"
             className="hover:text-pink-400 py-2"
             onClick={handleNavClick}
           >
-            Contact
+            Waitlist
           </a>
           {/* <a
             href="#"

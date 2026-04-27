@@ -105,7 +105,6 @@ const Contact = () => {
                 className="w-full rounded-xl border border-white/5 bg-white/5 p-4 text-white placeholder:text-gray-600 focus:border-white/20 focus:bg-white/10 focus:outline-none transition-all resize-none"
               />
             </div>
-
             <button
               type="submit"
               disabled={loading}

@@ -25,15 +25,37 @@ const Footer = () => {
                 The future of social is voice. Join the conversation and start listening to what matters.
               </p>
               <div className="flex gap-4">
-                {[BsTwitterX, FaReddit, FaInstagram, Mail].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
-                  >
-                    <Icon size={20} />
-                  </a>
-                ))}
+                {/* PUT YOUR SOCIAL LINKS HERE */}
+                <a
+                  href="https://x.com/your-username"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
+                >
+                  <BsTwitterX size={20} />
+                </a>
+                <a
+                  href="https://reddit.com/r/your-community"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
+                >
+                  <FaReddit size={20} />
+                </a>
+                <a
+                  href="https://instagram.com/your-username"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
+                >
+                  <FaInstagram size={20} />
+                </a>
+                <a
+                  href="mailto:hello@yourdomain.com"
+                  className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-pink-500/20 hover:border-pink-500/50 transition-all duration-300"
+                >
+                  <Mail size={20} />
+                </a>
               </div>
             </div>
 
@@ -42,16 +64,17 @@ const Footer = () => {
               <div className="space-y-4">
                 <h3 className="text-white font-semibold">Platform</h3>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-pink-400 transition">Features</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition">Waitlist</a></li>
+                  <li><a href="#features" className="hover:text-pink-400 transition">Features</a></li>
+                  <li><a href="#join" className="hover:text-pink-400 transition">Waitlist</a></li>
                 </ul>
               </div>
               <div className="space-y-4">
                 <h3 className="text-white font-semibold">Company</h3>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-pink-400 transition">About</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition">Privacy</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition">Terms</a></li>
+                  <li><a href="#about" className="hover:text-pink-400 transition">About</a></li>
+                  {/* PUT YOUR PRIVACY/TERMS LINKS HERE */}
+                  <li><a href="/privacy" className="hover:text-pink-400 transition">Privacy</a></li>
+                  <li><a href="/terms" className="hover:text-pink-400 transition">Terms</a></li>
                 </ul>
               </div>
             </div>
