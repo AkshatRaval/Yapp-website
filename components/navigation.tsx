@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useSensoryUI } from "@/components/ui/sensory-ui/config/provider";
-import { BsTwitterX } from "react-icons/bs";
-import { FaRedditAlien } from "react-icons/fa";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,26 +90,6 @@ const Navigation = () => {
             Login
           </a> */}
 
-          <div className="flex gap-2">
-            <a
-              href="https://x.com/akshatraval8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
-              onClick={handleGetStarted}
-            >
-              <BsTwitterX size={20} />
-            </a>
-            <a
-              href="https://reddit.com/r/YappYourself"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition flex items-center justify-center"
-              onClick={handleGetStarted}
-            >
-              <FaRedditAlien size={20} />
-            </a>
-          </div>
           <a
             href="#join"
             className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition"
